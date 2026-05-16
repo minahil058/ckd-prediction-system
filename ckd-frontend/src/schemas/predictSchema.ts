@@ -1,4 +1,3 @@
-// Triggering fresh build
 import { z } from "zod";
 
 /**
@@ -9,16 +8,13 @@ export const step1Schema = z.object({
   age: z.coerce.number().min(1, "Age must be at least 1").max(120, "Age cannot exceed 120"),
   bp: z.coerce.number().min(40, "BP must be at least 40").max(200, "BP cannot exceed 200"),
   sg: z.enum(["1.005", "1.010", "1.015", "1.020", "1.025"], {
-    required_error: "Specific Gravity is required",
-    invalid_type_error: "Please select a valid Specific Gravity value",
+    errorMap: () => ({ message: "Specific gravity is required" })
   }),
   al: z.enum(["0", "1", "2", "3", "4", "5"], {
-    required_error: "Albumin level is required",
-    invalid_type_error: "Please select a valid Albumin level",
+    errorMap: () => ({ message: "Albumin level is required" })
   }),
   su: z.enum(["0", "1", "2", "3", "4", "5"], {
-    required_error: "Sugar level is required",
-    invalid_type_error: "Please select a valid Sugar level",
+    errorMap: () => ({ message: "Sugar level is required" })
   }),
 });
 
@@ -72,4 +68,3 @@ export const predictSchema = z.object({
   ...step3Schema.shape,
   ...step4Schema.shape,
 });
-
