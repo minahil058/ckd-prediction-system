@@ -2,11 +2,9 @@ import React, { useState } from "react";
 import { 
   Activity, 
   Zap, 
-  ShieldCheck, 
   Database, 
   RefreshCcw, 
   Clock, 
-  CheckCircle2,
   AlertCircle,
   Eye,
   Trash2,
@@ -60,7 +58,7 @@ const SurveillancePage: React.FC = () => {
         ].map((s, i) => (
           <div key={i} className="bg-white border border-slate-200/50 p-3.5 rounded-xl shadow-sm flex items-center gap-4 group hover:shadow-md transition-all">
             <div className={`w-9 h-9 rounded-lg ${s.bg} flex items-center justify-center ${s.color} border border-transparent group-hover:border-current/10 transition-all`}>
-              {React.cloneElement(s.icon as React.ReactElement, { size: 16 })}
+              {React.cloneElement(s.icon as React.ReactElement, { size: 16 } as any)}
             </div>
             <div>
               <p className="text-[9px] font-bold text-slate-400 uppercase tracking-widest leading-none">{s.label}</p>

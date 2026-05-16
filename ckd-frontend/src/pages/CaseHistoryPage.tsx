@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import DashboardSystemStatus from "../components/dashboard/DashboardSystemStatus.tsx";
-import { History, Activity, Clock, Search, Filter, ChevronRight, Info } from "lucide-react";
+import { History, Activity, ChevronRight, Info } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const CaseHistoryPage: React.FC = () => {

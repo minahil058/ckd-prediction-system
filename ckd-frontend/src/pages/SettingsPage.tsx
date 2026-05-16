@@ -2,9 +2,7 @@ import React, { useState } from "react";
 import { 
   User, 
   Shield, 
-  Key, 
   Bell, 
-  Database, 
   Cpu, 
   ChevronRight, 
   Globe, 
@@ -13,7 +11,6 @@ import {
   Zap, 
   Save,
   AlertCircle,
-  CheckCircle2,
   Copy,
   Eye,
   EyeOff

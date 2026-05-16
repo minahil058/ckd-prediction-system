@@ -134,7 +134,7 @@ const Dashboard: React.FC = () => {
             <div className="flex justify-between items-start mb-2">
                <span className="text-[8px] font-bold text-slate-400 uppercase tracking-widest leading-none">{stat.label}</span>
                <div className={`p-1 rounded-lg border border-transparent transition-all ${stat.up ? "bg-emerald-50 text-emerald-500 group-hover:border-emerald-200" : "bg-rose-50 text-rose-500 group-hover:border-rose-200"}`}>
-                 {React.cloneElement(stat.icon as React.ReactElement, { size: 12 })}
+                 {React.cloneElement(stat.icon as React.ReactElement, { size: 12 } as any)}
                </div>
             </div>
             <div className="flex items-baseline gap-1.5">

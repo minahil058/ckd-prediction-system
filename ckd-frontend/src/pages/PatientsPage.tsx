@@ -24,7 +24,7 @@ const PatientsPage: React.FC<PatientsPageProps> = ({ onNavigate }) => {
         ].map((s) => (
           <div key={s.label} className="bg-white border border-slate-200/50 rounded-xl p-3 shadow-sm flex items-center gap-3.5 group hover:shadow-md transition-all">
             <div className={`w-9 h-9 rounded-lg ${s.bg} ${s.color} flex items-center justify-center border border-transparent group-hover:border-rose-100 transition-all`}>
-              {React.cloneElement(s.icon as React.ReactElement, { size: 14 })}
+              {React.cloneElement(s.icon as React.ReactElement, { size: 14 } as any)}
             </div>
             <div>
               <p className="text-[8px] font-bold text-slate-400 uppercase tracking-widest leading-none">{s.label}</p>

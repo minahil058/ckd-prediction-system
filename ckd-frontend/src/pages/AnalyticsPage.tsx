@@ -45,7 +45,7 @@ const AnalyticsPage: React.FC = () => {
             <div className="flex justify-between items-center mb-2">
               <p className="text-[8px] font-bold text-slate-400 uppercase tracking-widest">{s.label}</p>
               <div className={`${s.bg} ${s.color} p-1 rounded-lg border border-transparent group-hover:border-current/10 transition-all`}>
-                {React.cloneElement(s.icon as React.ReactElement, { size: 12 })}
+                {React.cloneElement(s.icon as React.ReactElement, { size: 12 } as any)}
               </div>
             </div>
             <div className="flex items-baseline gap-2">
