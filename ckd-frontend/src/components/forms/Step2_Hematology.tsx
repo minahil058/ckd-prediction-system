@@ -11,7 +11,7 @@ const InputField: React.FC<{ label: string, unit?: string, name: string, placeho
         {...register(name)}
         type="number"
         placeholder={placeholder}
-        className={`w-full bg-slate-50/50 border border-slate-200 rounded-xl py-3 px-4 text-[13px] font-bold outline-none focus:border-indigo-500/50 focus:ring-4 focus:ring-indigo-500/5 transition-all ${
+        className={`w-full bg-slate-50/50 border border-slate-200 rounded-xl py-3 px-4 text-[13px] font-bold outline-none focus:border-rose-400/50 focus:ring-4 focus:ring-rose-500/5 transition-all ${
           error ? "border-rose-300 bg-rose-50/10" : ""
         }`}
       />
@@ -28,7 +28,7 @@ const SelectField: React.FC<{ label: string, name: string, options: { label: str
       <div className="relative">
         <select
           {...register(name)}
-          className={`w-full bg-slate-50/50 border border-slate-200 rounded-xl py-3 px-4 text-[13px] font-bold outline-none focus:border-indigo-500/50 focus:ring-4 focus:ring-indigo-500/5 transition-all cursor-pointer appearance-none ${
+          className={`w-full bg-slate-50/50 border border-slate-200 rounded-xl py-3 px-4 text-[13px] font-bold outline-none focus:border-rose-400/50 focus:ring-4 focus:ring-rose-500/5 transition-all cursor-pointer appearance-none ${
             error ? "border-rose-300 bg-rose-50/10" : ""
           }`}
         >
@@ -49,19 +49,19 @@ const Step2_Hematology: React.FC = () => {
   return (
     <div className="space-y-6">
       <div className="flex items-center gap-3 mb-2 border-b border-slate-50 pb-4">
-        <div className="w-8 h-8 rounded-lg bg-indigo-50 text-indigo-600 flex items-center justify-center">
+        <div className="w-8 h-8 rounded-lg bg-rose-50 text-rose-600 flex items-center justify-center">
           <FlaskConical size={16} />
         </div>
         <h4 className="text-[11px] font-black text-slate-800 uppercase tracking-widest">Hematology & Microscopy</h4>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        <SelectField label="RBC Status" name="rbc" options={[{ label: "Normal", value: "normal" }, { label: "Abnormal", value: "abnormal" }]} error={errors.rbc?.message as string} />
-        <SelectField label="Pus Cell Status" name="pc" options={[{ label: "Normal", value: "normal" }, { label: "Abnormal", value: "abnormal" }]} error={errors.pc?.message as string} />
-        <SelectField label="Pus Cell Clumps" name="pcc" options={[{ label: "Present", value: "present" }, { label: "Not Present", value: "notpresent" }]} error={errors.pcc?.message as string} />
-        <SelectField label="Bacteria" name="ba" options={[{ label: "Present", value: "present" }, { label: "Not Present", value: "notpresent" }]} error={errors.ba?.message as string} />
-        <InputField label="Hemoglobin" unit="g/dL" name="hemo" placeholder="e.g. 15.4" error={errors.hemo?.message as string} />
-        <InputField label="Packed Cell Vol" unit="%" name="pcv" placeholder="e.g. 44" error={errors.pcv?.message as string} />
+        <SelectField label="RBC Status" name="redBloodCells" options={[{ label: "Normal", value: "normal" }, { label: "Abnormal", value: "abnormal" }]} error={errors.redBloodCells?.message as string} />
+        <SelectField label="Pus Cell Status" name="pusCell" options={[{ label: "Normal", value: "normal" }, { label: "Abnormal", value: "abnormal" }]} error={errors.pusCell?.message as string} />
+        <SelectField label="Pus Cell Clumps" name="pusCellClumps" options={[{ label: "Present", value: "present" }, { label: "Not Present", value: "notpresent" }]} error={errors.pusCellClumps?.message as string} />
+        <SelectField label="Bacteria" name="bacteria" options={[{ label: "Present", value: "present" }, { label: "Not Present", value: "notpresent" }]} error={errors.bacteria?.message as string} />
+        <InputField label="Hemoglobin" unit="g/dL" name="hemoglobin" placeholder="e.g. 15.4" error={errors.hemoglobin?.message as string} />
+        <InputField label="Packed Cell Vol" unit="%" name="packedCellVolume" placeholder="e.g. 44" error={errors.packedCellVolume?.message as string} />
       </div>
     </div>
   );

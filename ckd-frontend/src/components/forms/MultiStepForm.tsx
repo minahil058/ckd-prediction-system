@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useForm, FormProvider } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { AnimatePresence, motion } from "framer-motion";
-import { Loader2, ChevronRight, Check } from "lucide-react";
+import { ChevronRight, Check } from "lucide-react";
 import { predictSchema } from "../../schemas/predictSchema.ts";
 import { storage } from "../../utils/storage.ts";
 import type { PredictionResponse } from "../../api/predictionService";
@@ -14,10 +14,10 @@ import Step4_SystemicHistory from "./Step4_SystemicHistory.tsx";
 import ResultsDashboard from "../../pages/ResultsDashboard.tsx";
 
 const STEP_FIELDS: string[][] = [
-  ["age", "bp", "sg", "al", "su"],
-  ["rbc", "pc", "pcc", "ba", "hemo", "pcv"],
-  ["bgr", "bu", "sc", "sod", "pot", "wbcc", "rbcc"],
-  ["htn", "dm", "cad", "appet", "pe", "ane"],
+  ["age", "bloodPressure", "specificGravity", "albumin", "sugar"],
+  ["redBloodCells", "pusCell", "pusCellClumps", "bacteria", "hemoglobin", "packedCellVolume"],
+  ["bloodGlucoseRandom", "bloodUrea", "serumCreatinine", "sodium", "potassium", "whiteBloodCellCount", "redBloodCellCount"],
+  ["hypertension", "diabetesMellitus", "coronaryArteryDisease", "appetite", "pedalEdema", "anemia"],
 ];
 
 const MultiStepForm: React.FC = () => {
@@ -97,13 +97,13 @@ const MultiStepForm: React.FC = () => {
           <div key={step} className="flex flex-col items-center gap-2 bg-[#f8fafc] px-3">
             <div className={`w-8 h-8 rounded-full flex items-center justify-center text-[12px] font-black transition-all duration-500 ${
               currentStep === step 
-                ? "bg-indigo-600 text-white shadow-lg shadow-indigo-100 scale-110" 
+                ? "bg-rose-600 text-white shadow-lg shadow-rose-100 scale-110" 
                 : currentStep > step ? "bg-emerald-500 text-white" : "bg-white border border-slate-200 text-slate-300"
             }`}>
               {currentStep > step ? <Check size={14} strokeWidth={3} /> : step + 1}
             </div>
             <span className={`text-[9px] font-bold uppercase tracking-widest ${
-              currentStep === step ? "text-indigo-600" : "text-slate-300"
+              currentStep === step ? "text-rose-600" : "text-slate-300"
             }`}>
               PHASE {step + 1}
             </span>
@@ -115,7 +115,7 @@ const MultiStepForm: React.FC = () => {
       <div className="bg-white border border-slate-200/60 rounded-[2.5rem] p-8 shadow-sm relative overflow-hidden min-h-[400px]">
         {isLoading && (
           <div className="absolute inset-0 z-50 bg-white/60 backdrop-blur-sm flex flex-col items-center justify-center animate-in fade-in duration-300">
-             <div className="w-12 h-12 border-4 border-indigo-100 border-t-indigo-600 rounded-full animate-spin mb-4" />
+             <div className="w-12 h-12 border-4 border-rose-100 border-t-rose-600 rounded-full animate-spin mb-4" />
              <p className="text-[11px] font-black text-slate-800 uppercase tracking-widest">Processing Intelligence</p>
           </div>
         )}

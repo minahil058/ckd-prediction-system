@@ -10,7 +10,7 @@ const SelectField: React.FC<{ label: string, name: string, options: { label: str
       <div className="relative">
         <select
           {...register(name)}
-          className={`w-full bg-slate-50/50 border border-slate-200 rounded-xl py-3 px-4 text-[13px] font-bold outline-none focus:border-indigo-500/50 focus:ring-4 focus:ring-indigo-500/5 transition-all cursor-pointer appearance-none ${
+          className={`w-full bg-slate-50/50 border border-slate-200 rounded-xl py-3 px-4 text-[13px] font-bold outline-none focus:border-rose-400/50 focus:ring-4 focus:ring-rose-500/5 transition-all cursor-pointer appearance-none ${
             error ? "border-rose-300 bg-rose-50/10" : ""
           }`}
         >
@@ -31,19 +31,19 @@ const Step4_SystemicHistory: React.FC = () => {
   return (
     <div className="space-y-6">
       <div className="flex items-center gap-3 mb-2 border-b border-slate-50 pb-4">
-        <div className="w-8 h-8 rounded-lg bg-indigo-50 text-indigo-600 flex items-center justify-center">
+        <div className="w-8 h-8 rounded-lg bg-rose-50 text-rose-600 flex items-center justify-center">
           <ClipboardList size={16} />
         </div>
         <h4 className="text-[11px] font-black text-slate-800 uppercase tracking-widest">Systemic History & Comorbidities</h4>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        <SelectField label="Hypertension" name="htn" options={[{ label: "No", value: "no" }, { label: "Yes", value: "yes" }]} error={errors.htn?.message as string} />
-        <SelectField label="Diabetes Mellitus" name="dm" options={[{ label: "No", value: "no" }, { label: "Yes", value: "yes" }]} error={errors.dm?.message as string} />
-        <SelectField label="Coronary Artery" name="cad" options={[{ label: "No", value: "no" }, { label: "Yes", value: "yes" }]} error={errors.cad?.message as string} />
-        <SelectField label="Appetite" name="appet" options={[{ label: "Good", value: "good" }, { label: "Poor", value: "poor" }]} error={errors.appet?.message as string} />
-        <SelectField label="Pedal Edema" name="pe" options={[{ label: "No", value: "no" }, { label: "Yes", value: "yes" }]} error={errors.pe?.message as string} />
-        <SelectField label="Anemia" name="ane" options={[{ label: "No", value: "no" }, { label: "Yes", value: "yes" }]} error={errors.ane?.message as string} />
+        <SelectField label="Hypertension" name="hypertension" options={[{ label: "No", value: "no" }, { label: "Yes", value: "yes" }]} error={errors.hypertension?.message as string} />
+        <SelectField label="Diabetes Mellitus" name="diabetesMellitus" options={[{ label: "No", value: "no" }, { label: "Yes", value: "yes" }]} error={errors.diabetesMellitus?.message as string} />
+        <SelectField label="Coronary Artery" name="coronaryArteryDisease" options={[{ label: "No", value: "no" }, { label: "Yes", value: "yes" }]} error={errors.coronaryArteryDisease?.message as string} />
+        <SelectField label="Appetite" name="appetite" options={[{ label: "Good", value: "good" }, { label: "Poor", value: "poor" }]} error={errors.appetite?.message as string} />
+        <SelectField label="Pedal Edema" name="pedalEdema" options={[{ label: "No", value: "no" }, { label: "Yes", value: "yes" }]} error={errors.pedalEdema?.message as string} />
+        <SelectField label="Anemia" name="anemia" options={[{ label: "No", value: "no" }, { label: "Yes", value: "yes" }]} error={errors.anemia?.message as string} />
       </div>
     </div>
   );

@@ -18,7 +18,7 @@ const FieldInput: React.FC<{
         {...register(name)}
         type="number"
         placeholder={placeholder ?? "—"}
-        className={`w-full bg-slate-50/50 border border-slate-200 rounded-xl py-3 px-4 text-[13px] font-bold outline-none focus:border-indigo-500/50 focus:ring-4 focus:ring-indigo-500/5 transition-all ${
+        className={`w-full bg-slate-50/50 border border-slate-200 rounded-xl py-3 px-4 text-[13px] font-bold outline-none focus:border-rose-400/50 focus:ring-4 focus:ring-rose-500/5 transition-all ${
           error ? "border-rose-300 bg-rose-50/10" : ""
         }`}
       />
@@ -40,7 +40,7 @@ const FieldSelect: React.FC<{
       <div className="relative">
         <select
           {...register(name)}
-          className={`w-full bg-slate-50/50 border border-slate-200 rounded-xl py-3 px-4 text-[13px] font-bold outline-none focus:border-indigo-500/50 focus:ring-4 focus:ring-indigo-500/5 transition-all cursor-pointer appearance-none ${
+          className={`w-full bg-slate-50/50 border border-slate-200 rounded-xl py-3 px-4 text-[13px] font-bold outline-none focus:border-rose-400/50 focus:ring-4 focus:ring-rose-500/5 transition-all cursor-pointer appearance-none ${
             error ? "border-rose-300 bg-rose-50/10" : ""
           }`}
         >
@@ -58,8 +58,8 @@ const FieldSelect: React.FC<{
 const SectionGroup: React.FC<{ icon: React.ReactNode; title: string; children: React.ReactNode }> = ({ icon, title, children }) => (
   <div className="mb-5">
     <div className="flex items-center gap-2.5 pb-2.5 mb-4 border-b border-slate-50/50">
-      <div className="w-7 h-7 rounded-lg bg-slate-50 flex items-center justify-center text-indigo-600 border border-slate-100">
-        {React.cloneElement(icon as React.ReactElement, { size: 14, strokeWidth: 2 })}
+      <div className="w-7 h-7 rounded-lg bg-rose-50 text-rose-600 border border-rose-100">
+        {React.cloneElement(icon as React.ReactElement, { size: 14, strokeWidth: 2 } as any)}
       </div>
       <p className="text-[12px] font-bold text-slate-800 tracking-tight uppercase">{title}</p>
     </div>
@@ -76,14 +76,14 @@ const Step1_Vitals: React.FC = () => {
     <div className="animate-in fade-in duration-500">
       <SectionGroup icon={<Heart />} title="Primary Vitals">
         <FieldInput name="age" label="Patient Age" unit="Years" placeholder="e.g. 45" error={errors.age?.message as string} />
-        <FieldInput name="bp" label="Blood Pressure" unit="mmHg" placeholder="e.g. 80" error={errors.bp?.message as string} />
+        <FieldInput name="bloodPressure" label="Blood Pressure" unit="mmHg" placeholder="e.g. 80" error={errors.bloodPressure?.message as string} />
       </SectionGroup>
 
       <SectionGroup icon={<Droplets />} title="Urinalysis Metrics">
-        <FieldSelect name="sg" label="Specific Gravity" options={sgOptions} error={errors.sg?.message as string} />
+        <FieldSelect name="specificGravity" label="Specific Gravity" options={sgOptions} error={errors.specificGravity?.message as string} />
         <div className="grid grid-cols-2 gap-5">
-          <FieldSelect name="al" label="Albumin" options={scaleOptions} error={errors.al?.message as string} />
-          <FieldSelect name="su" label="Sugar" options={scaleOptions} error={errors.su?.message as string} />
+          <FieldSelect name="albumin" label="Albumin" options={scaleOptions} error={errors.albumin?.message as string} />
+          <FieldSelect name="sugar" label="Sugar" options={scaleOptions} error={errors.sugar?.message as string} />
         </div>
       </SectionGroup>
     </div>
