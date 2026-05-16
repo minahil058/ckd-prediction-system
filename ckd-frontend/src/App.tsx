@@ -8,7 +8,7 @@ import AnalyticsPage from "./pages/AnalyticsPage.tsx";
 import SurveillancePage from "./pages/SurveillancePage.tsx";
 import CompliancePage from "./pages/CompliancePage.tsx";
 import SettingsPage from "./pages/SettingsPage.tsx";
-import { Activity, Search, Bell } from "lucide-react";
+import { Search, Bell } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const pageMeta: Record<string, { title: string; sub: string }> = {

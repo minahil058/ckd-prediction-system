@@ -1,13 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { 
   Activity, 
-  ArrowUpRight, 
   BarChart2,
   ShieldCheck,
   Target,
   CheckCircle2,
   AlertTriangle,
-  Clock,
   X,
   Server,
   Loader
